@@ -92,22 +92,32 @@ public class Main {
             if ((numArr[i] % 5 == 0) & (numArr[i] % 7 == 0))
                 System.out.println("6.4 Делится на 5 и 7 одновременно: " + numArr[i]);
 
-        int a = 0, b = 0, c = 0;
+        int a = 0, b = 0, c = 0, d = 0;
         for (int j = 0; j < numArr.length; j++)
-            if ((numArr[j] > 99) && (numArr[j] < 1000)) {
-                a = numArr[j] / 10 / 10;
-                b = numArr[j] / 10 % 10;
-                c = numArr[j] % 100 % 10;
-                if (a != b && a != c && b != a && b != c)
-                    System.out.println("6.5 Все 3х значные без одинаковых: " + numArr[j]);
-                else if (a==c)
-                    System.out.println("6.6 Все 3х значные фартовые(зеркальные): " + numArr[j]);
+            if ((numArr[j] > 0) && (numArr[j] < 10000)) {
+                a = numArr[j] / 1000 % 10;
+                b = numArr[j] / 100 % 10;
+                c = numArr[j] / 10 % 10;
+                d = numArr[j] % 10;
+
+                if (a != b & a != c & b != a & b != c & d != a & d != b & d != c)
+                    System.out.println("6.5 Все без одинаковых(от 3х знаков): " + numArr[j]);
+            }
+        int e = 0, f = 0, g = 0, h = 0;
+        for (int j = 0; j < numArr.length; j++)
+            if ((numArr[j] > 99) && (numArr[j] < 10000)) {
+                e = numArr[j] / 1000 % 10;
+                f = numArr[j] / 100 % 10;
+                g = numArr[j] / 10 % 10;
+                h = numArr[j] % 10;
+
+                if (e + f == g + h)
+                    System.out.println("6.6 Все 4х значные фартовые: " + numArr[j]);
 
             }
-
-        }
-
     }
+
+}
 
 
 
